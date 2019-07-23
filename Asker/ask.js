@@ -8,7 +8,7 @@ let alreadyAsked = [];
 
 console.log(classList); //output: [ 'foo', 'bar', 3 ]
 
-// Function which chooses the name displayed in the button.
+// Function which chooses the name displayed in the visible button.
 function changeAnswerer() {
 		let randomized = Math.floor(Math.random()*answerer.length);
 		let asked = answerer.splice(randomized, 1);
