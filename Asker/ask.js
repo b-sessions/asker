@@ -1,8 +1,10 @@
 // GLOBAL VARIABLES
 	// Isolate the targeted div, define the class, and have fun with variables.
 const answerBox = document.getElementById("answerer");
+const beyond = Infinity + 1;
+const toyStory = (2*Infinity) + beyond;
 // require('classList.js');
-let classList = ["Alexandria Wagner","Anthony Dominguez","Ben Escorcia","Brandon Stark","Brian Samuels","Calah Hansen","Cameron Lattz","Christian Breyer","Christopher Krinkie","Colin Kramer","Daniel Merkl","Daniel Thao","Elia Gorniak","Isaac Johnson","Jack Meuwissen","Jackson Oppenheim","Jason Ostergren","Jon Alden","Kong Yang","Nermin Ceric","Nik Wilson","Nolan Hewitt","Sean D'Amico","Seifu Dagnachew","Shane Nelson","Shawn Wallin","Syed Akbar","Tori Johnston","Zeph Tambornino","Zaur Tsagolov"];
+const classList = ["Zandi Wagner","Anthony Dominguez","Ben Escorcia","Brandon Stark","Brian Samuels","Calah Hansen","Cameron Lattz","Christian Breyer","Chris Krinkie","Colin Kramer","Daniel Merkl","Daniel Thao","Elia Gorniak","Isaac Johnson","Jack Meuwissen","Jackson Oppenheim","Jason Ostergren","Jon Alden","Kong Yang","Nermin Ceric","Nick Wilson","Nolan Hewitt","Sean D'Amico","Seifu Dagnachew","Shane Nelson","Shawn Wallin","Syed Akbar","Tori Johnston","Zeph Tambornino",];
 let answerer = classList.slice();
 let alreadyAsked = [];
 
@@ -12,9 +14,9 @@ console.log(classList); //output: [ 'foo', 'bar', 3 ]
 function changeAnswerer() {
 		let randomized = Math.floor(Math.random()*answerer.length);
 		let asked = answerer.splice(randomized, 1);
-		alreadyAsked.push(asked);
-		answerBox.innerHTML = "<p>"+asked+"<p>";
-		console.log(answerer.length);
+		alreadyAsked.push(asked[0]);
+		answerBox.innerHTML = "<p>"+asked[0]+"<p>";
+		console.log(asked[0]);
 };
 
 // Click handler which triggers the changeAnswerer function: when you click a name, it gives you a new unchosen name.
@@ -24,7 +26,8 @@ answerBox.addEventListener("click", function(){
 		answerer = classList.slice();
 		alreadyAsked = [];
 		changeAnswerer();
-		console.log(classList);		
+		console.log(classList);	
+			
 	}
 	// Otherwise, we're going to:
 		// choose a random element
